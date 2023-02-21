@@ -1,4 +1,7 @@
 # meowscript, an esolang designed for catboys/catgirls/nyanbinaries
+
+the interpreter is a wip as of now
+
 ## guide:
 ### basic concepts
 variable: has a name(int) and a value(int)
