@@ -4,6 +4,7 @@ the interpreter is a wip as of now
 you can create, grab, ungrab, do operations on variables
 no control flow or input/output yet
 not tested much, could be functioning incorrectly
+usage: run meowscript.exe or meowscript.py, enter the file name on the next line
 ## guide:
 ### basic concepts
 variable: has a name(int) and a value(int)
