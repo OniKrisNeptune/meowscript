@@ -1,7 +1,9 @@
 # meowscript, an esolang designed for catboys/catgirls/nyanbinaries
-
 the interpreter is a wip as of now
-
+## version specific notes: 
+you can create, grab, ungrab, do operations on variables
+no control flow or input/output yet
+not tested much, could be functioning incorrectly
 ## guide:
 ### basic concepts
 variable: has a name(int) and a value(int)
