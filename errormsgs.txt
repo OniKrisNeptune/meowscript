@@ -1,0 +1,4 @@
+Attempted to ungrab ungrabbed variable
+Attempted to grab non existent variable
+Unrecognised command
+Attempted to use non existent variable
