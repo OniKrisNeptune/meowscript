@@ -12,11 +12,15 @@ a) the value that was written
 
 b) the value of the variable specified 
 
+c) input
+
 `a` is represented as meow with varying amounts of o
 
 for example: `meow` is 1, `meooow` is 3, `mew` is 0
 
 `b` gets the value of the variable specified. its name is also done using meows described in `a`, and to specify its a variable, it must be prefixed with `~`
+
+`c` gets input if you write `~~`, however the specifics have not been deicded yet
 
 for example: `~meow` gives the value of variable named 1, `~meoow~` gives the value of the variable named 2, and `~mew` gives the value of a variable named 0
 
