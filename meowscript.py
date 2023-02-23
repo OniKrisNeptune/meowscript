@@ -75,7 +75,7 @@ def main():
                 variables[grab[grabptr]] /= getint(arg, variables)
                 grabptr += 1
 
-        else: errorreport(2, lineno)
+        else: errorreport(2)
         lineno += 1
     print(variables)
 main()
