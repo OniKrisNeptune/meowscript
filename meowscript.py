@@ -29,47 +29,47 @@ def main():
         print(lineno)
 
     #new
-        if(inst == "nya"):
+        if(inst == "new"):
             arg = line[argptr]
             variables[getint(arg, variables)] = 1
 
     #grab
-        elif(inst == "nyya"):
+        elif(inst == "grab"):
             arg = line[argptr]
             if(getint(arg,variables) in variables):
                 grab.append(getint(arg, variables))
             else: errorreport(1, lineno)
 
     #ungrab
-        elif(inst == "nnyya"):
+        elif(inst == "ungrab"):
             arg = line[argptr]
             if(getint(arg,variables) in grab):
                 grab.remove(getint(arg, variables))
             else: errorreport(0, lineno)
 
     #add
-        elif(inst == "nyaa"):
+        elif(inst == "add"):
             arg = line[argptr]
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] += getint(arg, variables)
                 grabptr += 1
 
     #substract
-        elif(inst == "nnyaa"):
+        elif(inst == "sub"):
             arg = line[argptr]
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] -= getint(arg, variables)
                 grabptr += 1
 
     #multiply
-        elif(inst == "nyyaa"):
+        elif(inst == "mul"):
             arg = line[argptr]
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] *= getint(arg, variables)
                 grabptr += 1
 
     #divide
-        elif(inst == "nnyyaa"):
+        elif(inst == "div"):
             arg = line[argptr]
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] /= getint(arg, variables)
