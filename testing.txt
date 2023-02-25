@@ -1,9 +1,0 @@
-for the purposes of it being easier to test, here the commands are not nyas but actual words
-nya -> new
-nyya -> grab
-nnyya -> ungrab
-nyaa -> add
-nnyaa -> sub
-nyyaa -> mul
-nnyyaa -> div
-everything else is the same
