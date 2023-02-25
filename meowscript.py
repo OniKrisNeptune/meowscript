@@ -44,6 +44,7 @@ def main(source):
         elif(line[arg] == "nyaa"):
             arg += 1
             val = getint(line[arg])
+
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] += val
                 grabptr += 1
