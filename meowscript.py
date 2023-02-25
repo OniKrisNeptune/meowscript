@@ -1,81 +1,78 @@
-lineno = 0
 variables = {}
-def errorreport(error):
-    global lineno
-    errormsgs = open("errormsgs.txt", "r").read().split("\n")
-    print("Error " + str(error) + " @ line " +
-          str(lineno) + " : " + errormsgs[error])
-    input("press enter to close")
-    exit()
-def getint(value, variables):
+
+def getint(value):
+    global variables
     if(value[0] == "~"):
-        if(len(value) - 4 in variables):
+        if(len(value)-4 in variables):
             return(variables[len(value) - 4])
         else:
-            errorreport(3)
+            print("error 0")
+            quit()
     else:
         return(len(value) - 3)
-def main():
-    src = open(input(), "r").read().split("\n")
-    global lineno
-    argptr = 1
+
+def main(source):
+    src = open(source, "r").read().split("\n")
+    lineno = 0
     grab = []
-    global variables
+
     while(lineno != len(src)):
         line = src[lineno].split(" ")
-        inst = line[0]
+        arg = 0
         grabptr = 0
-        arg = line[argptr]
-        print(lineno)
+        val = 0
+        if(line[arg] == "nya"):
+            arg += 1
+            variables[getint(line[arg])] = 0
 
-    #new
-        if(inst == "nya"):
-            arg = line[argptr]
-            variables[getint(arg, variables)] = 1
+        elif(line[arg] == "nyya"):
+            arg += 1
+            if(getint(line[arg]) in variables):
+                grab.append(getint(line[arg]))
+            else:
+                print("error 1")
+                quit()
 
-    #grab
-        elif(inst == "nyya"):
-            arg = line[argptr]
-            if(getint(arg,variables) in variables):
-                grab.append(getint(arg, variables))
-            else: errorreport(1, lineno)
+        elif(line[arg] == "nnyya"):
+            arg += 1
+            if(getint(line[arg]) in grab):
+                grab.remove(getint(line[arg]))
+            else:
+                print("error 2")
+                quit()
 
-    #ungrab
-        elif(inst == "nnyya"):
-            arg = line[argptr]
-            if(getint(arg,variables) in grab):
-                grab.remove(getint(arg, variables))
-            else: errorreport(0, lineno)
-
-    #add
-        elif(inst == "nyaa"):
-            arg = line[argptr]
+        elif(line[arg] == "nyaa"):
+            arg += 1
+            val = getint(line[arg])
             while(grabptr != len(grab)):
-                variables[grab[grabptr]] += getint(arg, variables)
+                variables[grab[grabptr]] += val
                 grabptr += 1
 
-    #substract
-        elif(inst == "nnyaa"):
-            arg = line[argptr]
+        elif(line[arg] == "nnyaa"):
+            arg += 1
+            val = getint(line[arg])
             while(grabptr != len(grab)):
-                variables[grab[grabptr]] -= getint(arg, variables)
+                variables[grab[grabptr]] -= val
                 grabptr += 1
 
-    #multiply
-        elif(inst == "nyyaa"):
-            arg = line[argptr]
+        elif(line[arg] == "nyyaa"):
+            arg += 1
+            val = getint(line[arg])
             while(grabptr != len(grab)):
-                variables[grab[grabptr]] *= getint(arg, variables)
+                variables[grab[grabptr]] *= val
                 grabptr += 1
 
-    #divide
-        elif(inst == "nnyyaa"):
-            arg = line[argptr]
+        elif(line[arg] == "nnyyaa"):
+            arg += 1
+            val = getint(line[arg])
             while(grabptr != len(grab)):
-                variables[grab[grabptr]] /= getint(arg, variables)
+                variables[grab[grabptr]] /= val
                 grabptr += 1
 
-        else: errorreport(2)
+        else:
+            print("error 3")
+            quit()
+
         lineno += 1
     print(variables)
-main()
+main(input())
