@@ -1,6 +1,8 @@
 # meowscript, an esolang designed for catboys/catgirls/nyanbinaries
 the interpreter is a wip as of now
 usage: run meowscript.exe or meowscript.py, enter the file name on the next line
+## version specific notes:
+you can create new variables, grab/release variables and do operations
 ## guide:
 ### basic concepts
 variable: has a name(int) and a value(int)
