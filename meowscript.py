@@ -1,13 +1,14 @@
 variables = {}
-
+def errorreport(error):
+    input("error " + str(error) + "\npress enter to close")
+    quit()
 def getint(value):
     global variables
     if(value[0] == "~"):
         if(len(value)-4 in variables):
             return(variables[len(value) - 4])
         else:
-            print("error 0")
-            quit()
+            errorreport(0)
     else:
         return(len(value) - 3)
 
@@ -30,16 +31,14 @@ def main(source):
             if(getint(line[arg]) in variables):
                 grab.append(getint(line[arg]))
             else:
-                print("error 1")
-                quit()
+                errorreport(1)
 
         elif(line[arg] == "nnyya"):
             arg += 1
             if(getint(line[arg]) in grab):
                 grab.remove(getint(line[arg]))
             else:
-                print("error 2")
-                quit()
+                errorreport(2)
 
         elif(line[arg] == "nyaa"):
             arg += 1
@@ -70,8 +69,7 @@ def main(source):
                 grabptr += 1
 
         else:
-            print("error 3")
-            quit()
+            errorreport(3)
 
         lineno += 1
     print(variables)
