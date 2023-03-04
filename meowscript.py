@@ -76,3 +76,4 @@ def main(source):
         lineno += 1
     print(variables)
 main(input())
+input("press enter to quit")
