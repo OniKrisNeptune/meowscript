@@ -5,6 +5,7 @@ usage: run meowscript.exe or meowscript.py, enter the file name on the next line
 you can create new variables, grab/release variables and do operations
 ## guide:
 ### basic concepts
+### comments: add `^_^` at the beginning of the line
 variable: has a name(int) and a value(int)
 
 [value] in any instruction, [value] gets:
