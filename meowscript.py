@@ -67,6 +67,8 @@ def main(source):
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] /= val
                 grabptr += 1
+        elif(line[arg] == "^_^"):
+            pass
 
         else:
             errorreport(3)
