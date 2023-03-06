@@ -64,9 +64,12 @@ def main(source):
         elif(line[arg] == "nnyyaa"):
             arg += 1
             val = getint(line[arg])
-            while(grabptr != len(grab)):
-                variables[grab[grabptr]] /= val
-                grabptr += 1
+            if(val != 0):
+                while(grabptr != len(grab)):
+                    variables[grab[grabptr]] /= val
+                    grabptr += 1
+            else:
+                errorreport(4)
         elif(line[arg] == "^_^"):
             pass
 
