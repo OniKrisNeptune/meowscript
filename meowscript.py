@@ -5,13 +5,10 @@ def errorreport(error):
 def getint(value):
     global variables
     if(value[0] == "~"):
-        if(value[1] == "~"):
-            return(int(input()))
+        if(len(value)-4 in variables):
+            return(variables[len(value) - 4])
         else:
-            if(len(value)-4 in variables):
-                return(variables[len(value) - 4])
-            else:
-                errorreport(0)
+            errorreport(0)
     else:
         return(len(value) - 3)
 
@@ -73,12 +70,6 @@ def main(source):
                     grabptr += 1
             else:
                 errorreport(4)
-                
-        elif(line[arg] == "nnya"):
-            while(grabptr != len(grab)):
-                print(variables[grab[grabptr]])
-                grabptr += 1
-            
         elif(line[arg] == "^_^"):
             pass
 
@@ -86,5 +77,6 @@ def main(source):
             errorreport(3)
 
         lineno += 1
+    print(variables)
 main(input())
 input("press enter to quit")
