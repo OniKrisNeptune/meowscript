@@ -69,7 +69,7 @@ def main(source):
             val = getint(line[arg])
             if(val != 0):
                 while(grabptr != len(grab)):
-                    variables[grab[grabptr]] /= val
+                    variables[grab[grabptr]] //= val
                     grabptr += 1
             else:
                 errorreport(4)
