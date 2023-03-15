@@ -22,51 +22,43 @@ def main(source):
 
     while(lineno != len(src)):
         line = src[lineno].split(" ")
-        arg = 0
         grabptr = 0
         val = 0
-        if(line[arg] == "nya"):
-            arg += 1
-            variables[getint(line[arg])] = 0
+        if(line[0] == "nya"):
+            variables[getint(line[1])] = 0
 
-        elif(line[arg] == "nyya"):
-            arg += 1
-            if(getint(line[arg]) in variables):
-                grab.append(getint(line[arg]))
+        elif(line[0] == "nyya"):
+            if(getint(line[1]) in variables):
+                grab.append(getint(line[1]))
             else:
                 errorreport(1)
 
-        elif(line[arg] == "nnyya"):
-            arg += 1
-            if(getint(line[arg]) in grab):
-                grab.remove(getint(line[arg]))
+        elif(line[0] == "nnyya"):
+            if(getint(line[1]) in grab):
+                grab.remove(getint(line[1]))
             else:
                 errorreport(2)
 
-        elif(line[arg] == "nyaa"):
-            arg += 1
-            val = getint(line[arg])
+        elif(line[0] == "nyaa"):
+            val = getint(line[1])
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] += val
                 grabptr += 1
 
-        elif(line[arg] == "nnyaa"):
-            arg += 1
-            val = getint(line[arg])
+        elif(line[0] == "nnyaa"):
+            val = getint(line[1])
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] -= val
                 grabptr += 1
 
-        elif(line[arg] == "nyyaa"):
-            arg += 1
-            val = getint(line[arg])
+        elif(line[0] == "nyyaa"):
+            val = getint(line[1])
             while(grabptr != len(grab)):
                 variables[grab[grabptr]] *= val
                 grabptr += 1
 
-        elif(line[arg] == "nnyyaa"):
-            arg += 1
-            val = getint(line[arg])
+        elif(line[0] == "nnyyaa"):
+            val = getint(line[1])
             if(val != 0):
                 while(grabptr != len(grab)):
                     variables[grab[grabptr]] //= val
@@ -74,12 +66,12 @@ def main(source):
             else:
                 errorreport(4)
 
-        elif(line[arg] == "nnya"):
+        elif(line[0] == "nnya"):
             while(grabptr != len(grab)):
                 print(variables[grab[grabptr]])
                 grabptr += 1
 
-        elif(line[arg] == "^_^"):
+        elif(line[0] == "^_^"):
             pass
 
         else:
