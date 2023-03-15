@@ -55,7 +55,7 @@ operations:
 nyaa - add
 nnyaa - substract
 nyyaa - multiply
-nnyyaa - divide
+nnyyaa - floor divide
 ```
 examples: `nyaa meow` adds 1 to every grabbed variable
 
