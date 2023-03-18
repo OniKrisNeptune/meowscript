@@ -15,7 +15,7 @@ def getint(value):
     else:
         return(len(value) - 3)
 
-def main(source):
+def main(source,debug):
     src = open(source, "r").read().split("\n")
     lineno = 0
     grab = []
@@ -67,9 +67,15 @@ def main(source):
                 errorreport(4)
 
         elif(line[0] == "nnya"):
-            while(grabptr != len(grab)):
-                print(variables[grab[grabptr]])
-                grabptr += 1
+            val = getint(line[1])
+            if(val == 0):
+                while(grabptr != len(grab)):
+                    print(variables[grab[grabptr]])
+                    grabptr += 1
+            elif(val == 1):
+                while(grabptr != len(grab)):
+                    print(chr(variables[grab[grabptr]]))
+                    grabptr += 1
 
         elif(line[0] == "^_^"):
             pass
@@ -78,6 +84,13 @@ def main(source):
             errorreport(3)
 
         lineno += 1
+        if(debug == True):
+            print(lineno,line,grab,variables)
 
-main(input())
+sourceraw = input()
+if(sourceraw == "debug"):
+    debug = True
+    sourceraw = input()
+else: debug = False
+main(sourceraw,debug)
 input("press enter to quit")
