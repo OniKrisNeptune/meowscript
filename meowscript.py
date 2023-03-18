@@ -15,7 +15,7 @@ def getint(value):
     else:
         return(len(value) - 3)
 
-def main(source):
+def main(source,debug):
     src = open(source, "r").read().split("\n")
     lineno = 0
     grab = []
@@ -78,6 +78,12 @@ def main(source):
             errorreport(3)
 
         lineno += 1
-
-main(input())
+        if(debug == True):
+            print(lineno,line,grab,variables)
+sourceraw = input()
+if(sourceraw == "debug"):
+    debug = True
+    sourceraw = input()
+else: debug = False
+main(sourceraw,debug)
 input("press enter to quit")
