@@ -45,7 +45,7 @@ to modify a variable, you must grab it first
 
 `nnyya [value]` "ungrabs" a variable named [value]
 
-`nnya` is going to let you output, however how it will do it has not been decided yet
+`nnya` allows you to output all grabbed variables. if [value] is 0, outputs as integers, if 1 outputs as ascii characters
 
 ### arithmetic operations
 
@@ -64,7 +64,5 @@ examples: `nyaa meow` adds 1 to every grabbed variable
 *if variable x is grabbed and you attempt to perform an operation using x as a value, the value of x before the operation will be used for every grabbed variable*
 
 *no you cannot divide by zero*
-### output: 
-as of v0.4 nnya prints the value of every grabbed variable(subject to change)
 ### control flow
 theres gonna be an if and a while loop, however i am too lazy to document them rn and theyre not implemented yet
