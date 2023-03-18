@@ -67,9 +67,15 @@ def main(source,debug):
                 errorreport(4)
 
         elif(line[0] == "nnya"):
-            while(grabptr != len(grab)):
-                print(variables[grab[grabptr]])
-                grabptr += 1
+            val = getint(line[1])
+            if(val == 0):
+                while(grabptr != len(grab)):
+                    print(variables[grab[grabptr]])
+                    grabptr += 1
+            elif(val == 1):
+                while(grabptr != len(grab)):
+                    print(chr(variables[grab[grabptr]]))
+                    grabptr += 1
 
         elif(line[0] == "^_^"):
             pass
@@ -80,6 +86,7 @@ def main(source,debug):
         lineno += 1
         if(debug == True):
             print(lineno,line,grab,variables)
+
 sourceraw = input()
 if(sourceraw == "debug"):
     debug = True
