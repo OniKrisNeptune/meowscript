@@ -75,7 +75,11 @@ prints the square of the input
 
 `
 nya mew
+
 nyya mew
+
 nyaa ~~
+
 nyyaa mew
+
 nnya`
