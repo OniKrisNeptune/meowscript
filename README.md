@@ -73,7 +73,7 @@ theres gonna be an if and a while loop, however i am too lazy to document them r
 
 prints the square of the input
 
-`
+```
 nya mew
 
 nyya mew
@@ -82,4 +82,4 @@ nyaa ~~
 
 nyyaa mew
 
-nnya`
+nnya```
