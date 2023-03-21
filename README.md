@@ -70,9 +70,12 @@ as of v0.4 nnya prints the value of every grabbed variable(subject to change)
 theres gonna be an if and a while loop, however i am too lazy to document them rn and theyre not implemented yet
 
 ## example
+
+prints the square of the input
+
 `
 nya mew
 nyya mew
-nyaa ~~mew
+nyaa ~~
 nyyaa mew
-nnya mew`
+nnya`
