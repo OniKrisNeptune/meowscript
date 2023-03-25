@@ -67,3 +67,14 @@ examples: `nyaa meow` adds 1 to every grabbed variable
 *no you cannot divide by zero*
 ### control flow
 theres gonna be an if and a while loop, however i am too lazy to document them rn and theyre not implemented yet
+
+## example
+
+prints the square of the input
+
+```
+nya mew
+nyya mew
+nyaa ~~
+nyyaa mew
+nnya```
