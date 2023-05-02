@@ -1,4 +1,7 @@
 # meowscript, an esolang designed for catboys/catgirls/nyanbinaries
+
+it is currently paused until end of may as i am busy with school
+
 the interpreter is a wip as of now
 usage: run meowscript.exe or meowscript.py, enter the file name on the next line
 ## version specific notes:
