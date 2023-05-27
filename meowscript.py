@@ -17,67 +17,64 @@ def getint(value):
 
 def main(source):
     src = open(source, "r").read().split("\n")
-    lineno = 0
     grab = []
-
-    while(lineno != len(src)):
-        line = src[lineno].split(" ")
+    for lineno, line in enumerate(src):
+        line = line.split(" ")
         grabptr = 0
         val = 0
-        if(line[0] == "nya"):
-            variables[getint(line[1])] = 0
+        match line[0]:
+            case "nya":
+                variables[getint(line[1])] = 0
 
-        elif(line[0] == "nyya"):
-            if(getint(line[1]) in variables):
-                grab.append(getint(line[1]))
-            else:
-                errorreport(1)
+            case "nyya":
+                if(getint(line[1]) in variables):
+                    grab.append(getint(line[1]))
+                else:
+                    errorreport(1)
 
-        elif(line[0] == "nnyya"):
-            if(getint(line[1]) in grab):
-                grab.remove(getint(line[1]))
-            else:
-                errorreport(2)
+            case "nnyya":
+                if(getint(line[1]) in grab):
+                    grab.remove(getint(line[1]))
+                else:
+                    errorreport(2)
 
-        elif(line[0] == "nyaa"):
-            val = getint(line[1])
-            while(grabptr != len(grab)):
-                variables[grab[grabptr]] += val
-                grabptr += 1
-
-        elif(line[0] == "nnyaa"):
-            val = getint(line[1])
-            while(grabptr != len(grab)):
-                variables[grab[grabptr]] -= val
-                grabptr += 1
-
-        elif(line[0] == "nyyaa"):
-            val = getint(line[1])
-            while(grabptr != len(grab)):
-                variables[grab[grabptr]] *= val
-                grabptr += 1
-
-        elif(line[0] == "nnyyaa"):
-            val = getint(line[1])
-            if(val != 0):
+            case "nyaa":
+                val = getint(line[1])
                 while(grabptr != len(grab)):
-                    variables[grab[grabptr]] /= val
+                    variables[grab[grabptr]] += val
                     grabptr += 1
-            else:
-                errorreport(4)
 
-        elif(line[0] == "nnya"):
-            while(grabptr != len(grab)):
-                print(variables[grab[grabptr]])
-                grabptr += 1
+            case "nnyaa":
+                val = getint(line[1])
+                while(grabptr != len(grab)):
+                    variables[grab[grabptr]] -= val
+                    grabptr += 1
 
-        elif(line[0] == "^_^"):
-            pass
+            case "nyyaa":
+                val = getint(line[1])
+                while(grabptr != len(grab)):
+                    variables[grab[grabptr]] *= val
+                    grabptr += 1
 
-        else:
-            errorreport(3)
+            case "nnyyaa":
+                val = getint(line[1])
+                if(val != 0):
+                    while(grabptr != len(grab)):
+                        variables[grab[grabptr]] /= val
+                        grabptr += 1
+                else:
+                    errorreport(4)
 
-        lineno += 1
+            case "nnya":
+                while(grabptr != len(grab)):
+                    print(variables[grab[grabptr]])
+                    grabptr += 1
+
+            case "^_^":
+                pass
+
+            case _:
+                errorreport(3)
 
 main(input())
 input("press enter to quit")
