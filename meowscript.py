@@ -20,8 +20,6 @@ def main(source):
     grab = []
     for lineno, line in enumerate(src):
         line = line.split(" ")
-        grabptr = 0
-        val = 0
         match line[0]:
             case "nya":
                 variables[getint(line[1])] = 0
@@ -40,35 +38,31 @@ def main(source):
 
             case "nyaa":
                 val = getint(line[1])
-                while(grabptr != len(grab)):
-                    variables[grab[grabptr]] += val
-                    grabptr += 1
+                for i in grab:
+                    variables[i] += val
 
             case "nnyaa":
                 val = getint(line[1])
-                while(grabptr != len(grab)):
-                    variables[grab[grabptr]] -= val
-                    grabptr += 1
+                for i in grab:
+                    variables[i] -= val
 
             case "nyyaa":
                 val = getint(line[1])
-                while(grabptr != len(grab)):
-                    variables[grab[grabptr]] *= val
-                    grabptr += 1
+                for i in grab:
+                    variables[i] *= val
 
             case "nnyyaa":
                 val = getint(line[1])
-                if(val != 0):
-                    while(grabptr != len(grab)):
-                        variables[grab[grabptr]] /= val
-                        grabptr += 1
+                if val != 0:
+                    for i in grab:
+                        variables[i] /= val
                 else:
                     errorreport(4)
 
             case "nnya":
-                while(grabptr != len(grab)):
-                    print(variables[grab[grabptr]])
-                    grabptr += 1
+                for i in grab:
+                    print(variables[grab],end="")
+                print()
 
             case "^_^":
                 pass
