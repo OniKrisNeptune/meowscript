@@ -1,3 +1,5 @@
+# I gave up. I might try again with more knowledge at some point.
+
 # meowscript, an esolang designed for catboys/catgirls/nyanbinaries
 
 it is currently paused until end of may as i am busy with school
